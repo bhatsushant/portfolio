@@ -32,6 +32,25 @@ const Container = styled.div`
 
 const Role = styled.div`
   font-size: 44px;
+  color: #da4ea2;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 74px;
+  margin-bottom: 0px;
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const Subtitle = styled.p`
+  font-size: 24px;
+  color: lightgray;
+  margin-top: 0%;
 
   @media only screen and (max-width: 768px) {
     text-align: center;
@@ -51,6 +70,22 @@ const Left = styled.div`
   }
 `;
 
+const Line = styled.img`
+  height: 5px;
+`;
+
+const Button = styled.div`
+  background-color: #da4ea2;
+  color: white;
+  font-weight: 500;
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+`;
+
 const Right = styled.div`
   flex: 3;
   position: relative;
@@ -60,12 +95,28 @@ const Right = styled.div`
   }
 `;
 
-const Title = styled.h1`
-  font-size: 74px;
+const Img = styled.img`
+  width: 800px;
+  height: 500px;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* animation: animate 2s infinite ease alternate; */
 
   @media only screen and (max-width: 768px) {
-    text-align: center;
+    width: 300px;
+    height: 300px;
   }
+
+  /* @keyframes animate {
+    to {
+      transform: translateY(20px);
+    }
+  } */
 `;
 
 const Hero = () => {
@@ -75,9 +126,16 @@ const Hero = () => {
       <Container>
         <Left>
           <Title>Sushant Bhat</Title>
+          <Line src='./public/img/line.png'></Line>
           <Role>Full Stack Developer</Role>
+          <Subtitle>
+            Building Seamless Web Experiences from Front to Back
+          </Subtitle>
+          <Button>Learn More</Button>
         </Left>
-        <Right></Right>
+        <Right>
+          <Img src='./public/img/profile.jpg'></Img>
+        </Right>
       </Container>
     </Section>
   );
