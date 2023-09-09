@@ -23,6 +23,8 @@ function App() {
   return (
     <Container>
       <Hero></Hero>
+      <Who></Who>
+      <Works></Works>
     </Container>
   );
 }
