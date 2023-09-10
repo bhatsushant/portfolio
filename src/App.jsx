@@ -25,6 +25,7 @@ function App() {
       <Hero></Hero>
       <Who></Who>
       <Works></Works>
+      <Contact></Contact>
     </Container>
   );
 }
