@@ -35,20 +35,20 @@ const Map = () => {
         </Geographies>
       </ZoomableGroup>
 
-      {/* <Annotation
+      <Annotation
         subject={[-74.006, 40.7128]} // Coordinates for New Jersey
         dx={-20}
         dy={-30}
         connectorProps={{
-          stroke: '#FF5533',
+          stroke: 'white',
           strokeWidth: 3,
           strokeLinecap: 'round',
         }}
       >
-        <text x='8' textAnchor='end' alignmentBaseline='middle' fill='#F53'>
+        <text x='-150' textAnchor='end' alignmentBaseline='middle' fill='white'>
           {'New Jersey'}
         </text>
-      </Annotation> */}
+      </Annotation>
     </ComposableMap>
   );
 };

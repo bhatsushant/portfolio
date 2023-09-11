@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Suspense } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
-import Map from './Map';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 
 const Section = styled.div`
   height: 100vh;
@@ -58,11 +59,35 @@ const Button = styled.button`
 
 const Right = styled.div`
   flex: 1;
-  /* width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
+  position: relative;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
+`;
+
+const Img = styled.img`
+  width: 800px;
+  height: 600px;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: animate 2s infinite ease alternate;
+
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @keyframes animate {
+    to {
+      transform: translateY(20px);
+    }
+  }
 `;
 
 const Contact = () => {
@@ -110,7 +135,23 @@ const Contact = () => {
           </Form>
         </Left>
         <Right>
-          <Map></Map>
+          {/* <Map></Map> */}
+          <Canvas>
+            <Suspense fallback={null}>
+              <OrbitControls enableZoom={false} />
+              <ambientLight intensity={1} />
+              <directionalLight position={[3, 2, 1]} />
+              <Sphere args={[1, 100, 200]} scale={2.4}>
+                <MeshDistortMaterial
+                  color='#3d1c56'
+                  attach='material'
+                  distort={0.5}
+                  speed={2}
+                />
+              </Sphere>
+            </Suspense>
+          </Canvas>
+          <Img src='./img/moon.png' />
         </Right>
       </Container>
     </Section>
