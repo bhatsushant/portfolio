@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import Cube from './Cube';
 
 const Section = styled.div`
   height: 100vh;
@@ -97,7 +100,14 @@ const Who = () => {
   return (
     <Section>
       <Container>
-        <Left></Left>
+        <Left>
+          <Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Cube />
+            <OrbitControls enableZoom={false} autoRotate />
+          </Canvas>
+        </Left>
         <Right>
           <Title>Full Stack Developer</Title>
           <Line src='./public/img/line.png'></Line>
