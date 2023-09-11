@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import Development from './Development';
 import ProductDesign from './ProductDesign';
 import WebDesign from './WebDesign';
+import { Link } from 'react-scroll';
 
 const data = [
   'Web Development',
+  'Backend Development',
   'Full Stack Development',
   'Software Development',
-  'Backend Development',
 ];
 
 const Section = styled.div`
@@ -89,12 +90,24 @@ const ListItem = styled.li`
   }
 `;
 
+const Button = styled.div`
+  background-color: #da4ea2;
+  color: white;
+  font-weight: 500;
+  width: 120px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+`;
+
 const Right = styled.div`
   flex: 1;
 `;
 
 const Work = () => {
-  const [work, setWork] = useState('Web Design');
+  const [work, setWork] = useState('Web Development');
   return (
     <Section id='work'>
       <Container>
@@ -105,15 +118,24 @@ const Work = () => {
                 {item}
               </ListItem>
             ))}
+            <Button>
+              <Link
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                to='contact'
+              >
+                Contact
+              </Link>
+            </Button>
           </List>
         </Left>
         <Right>
-          {work === 'Web Design' ? (
-            <WebDesign />
-          ) : work === 'Development' ? (
+          {work === 'Web Development' || work === 'Full Stack Development' ? (
             <Development />
           ) : (
-            <ProductDesign />
+            <WebDesign />
           )}
         </Right>
       </Container>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navbar from './Navbar';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
+import { Link } from 'react-scroll';
 import GitHubLogo from '../../public/img/github-icon.svg';
 import LinkedInLogo from '../../public/img/linkedin-icon.svg';
 import InstagramLogo from '../../public/img/instagram-icon.svg';
@@ -180,7 +181,17 @@ const Hero = () => {
             Building Seamless Web Experiences from Front to Back
           </Subtitle>
           <ButtonContainer>
-            <Button>Learn More</Button>
+            <Button>
+              <Link
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                to='about'
+              >
+                Learn More
+              </Link>
+            </Button>
             <Anchor href={CV} download=''>
               Download CV
             </Anchor>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { Link } from 'react-scroll';
 import Cube from './Cube';
 
 const Section = styled.div`
@@ -118,7 +119,11 @@ const About = () => {
             MongoDB, Express, Node.js. Experience working with additional
             technologies such as Redux, GraphQL, and Redis.
           </Subtitle>
-          <Button>Work Experience</Button>
+          <Button>
+            <Link spy={true} smooth={true} offset={50} duration={500} to='work'>
+              Learn More
+            </Link>
+          </Button>
         </Right>
       </Container>
     </Section>

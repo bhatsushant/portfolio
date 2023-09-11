@@ -122,12 +122,13 @@ const Contact = () => {
         <Left>
           <Form onSubmit={handleSubmit} ref={ref}>
             <Title>Think we can work together? Kindly get in touch.</Title>
-            <Input placeholder='Name' name='name'></Input>
-            <Input placeholder='Email' name='email'></Input>
+            <Input placeholder='Name' name='name' required></Input>
+            <Input placeholder='Email' name='email' required></Input>
             <TextArea
               placeholder='Write your message'
               rows={10}
               name='message'
+              required
             ></TextArea>
             <Button type='submit'>Send</Button>
             {success &&
