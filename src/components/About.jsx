@@ -10,6 +10,7 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  /* background: url('./public/img/bg.jpeg'); */
 
   @media only screen and (max-width: 768px) {
     height: 200vh;
@@ -96,9 +97,9 @@ const Subtitle = styled.p`
   }
 `;
 
-const Who = () => {
+const About = () => {
   return (
-    <Section>
+    <Section id='about'>
       <Container>
         <Left>
           <Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
@@ -124,4 +125,4 @@ const Who = () => {
   );
 };
 
-export default Who;
+export default About;

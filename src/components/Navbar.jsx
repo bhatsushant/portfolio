@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
 const Section = styled.div`
   display: flex;
@@ -75,10 +76,46 @@ const Navbar = () => {
         <Links>
           {/* <Logo src=""></Logo> */}
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>About</ListItem>
-            <ListItem>Work</ListItem>
-            <ListItem>Contact</ListItem>
+            <ListItem>
+              <Link
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                to='hero'
+              >
+                Home
+              </Link>
+            </ListItem>
+            <Link
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              to='about'
+            >
+              <ListItem>About</ListItem>
+            </Link>
+            <Link
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              to='work'
+            >
+              <ListItem>Work</ListItem>
+            </Link>
+            <ListItem>
+              <Link
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                to='contact'
+              >
+                Contact
+              </Link>
+            </ListItem>
           </List>
         </Links>
         <Icons>

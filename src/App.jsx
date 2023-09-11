@@ -1,19 +1,20 @@
-import { useState } from 'react';
 import './App.css';
 import styled from 'styled-components';
 import Hero from './components/Hero';
-import Who from './components/Who';
-import Works from './components/Works';
+import About from './components/About';
+import Work from './components/Work';
 import Contact from './components/Contact';
+import Particle from './components/Particle';
 
 const Container = styled.div`
   height: 100vh;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   scrollbar-width: none;
   color: white;
-  background: url('./public/img/bg.jpeg');
+  /* background-color: #171717; */
+  /* background: url('./public/img/bg.jpeg'); */
   &::-webkit-scrollbar {
     display: none;
   }
@@ -22,9 +23,10 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
+      <Particle></Particle>
       <Hero></Hero>
-      <Who></Who>
-      <Works></Works>
+      <About></About>
+      <Work></Work>
       <Contact></Contact>
     </Container>
   );

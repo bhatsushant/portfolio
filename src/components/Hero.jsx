@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
+import GitHubLogo from '../../public/img/github-icon.svg';
+import LinkedInLogo from '../../public/img/linkedin-icon.svg';
+import InstagramLogo from '../../public/img/instagram-icon.svg';
+import TwitterLogo from '../../public/img/twitter-icon.svg';
+import CV from '../../public/assets/sushant-bhat-resume.pdf';
 
 const Section = styled.div`
   height: 100vh;
@@ -42,6 +49,7 @@ const Role = styled.div`
 const Title = styled.h1`
   font-size: 74px;
   margin-bottom: 0px;
+
   @media only screen and (max-width: 768px) {
     text-align: center;
   }
@@ -74,6 +82,11 @@ const Line = styled.img`
   height: 5px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Button = styled.div`
   background-color: #da4ea2;
   color: white;
@@ -86,6 +99,31 @@ const Button = styled.div`
   text-align: center;
 `;
 
+const Anchor = styled.a`
+  background-color: #da4ea2;
+  height: 20px;
+  color: white;
+  font-weight: 500;
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+`;
+
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const Icon = styled.img`
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+`;
+
 const Right = styled.div`
   flex: 3;
   position: relative;
@@ -96,8 +134,8 @@ const Right = styled.div`
 `;
 
 const Img = styled.img`
-  width: 900px;
-  height: 550px;
+  width: 500px;
+  height: 400px;
   object-fit: contain;
   position: absolute;
   top: 0;
@@ -105,23 +143,33 @@ const Img = styled.img`
   left: 0;
   right: 0;
   margin: auto;
-  /* animation: animate 2s infinite ease alternate; */
+  animation: animate 2s infinite ease alternate;
 
   @media only screen and (max-width: 768px) {
     width: 300px;
     height: 300px;
   }
 
-  /* @keyframes animate {
+  @keyframes animate {
     to {
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
-  } */
+  }
 `;
 
 const Hero = () => {
+  const gitHubUrl = 'https://github.com/bhatsushant';
+  const linkedInUrl = 'https://www.linkedin.com/in/sushantbhat93/';
+  const instagramUrl = 'https://www.instagram.com/sushantbhat_22/';
+  const twitterUrl = 'https://twitter.com/sushantbhat_22';
+
+  const handleGitHubIcon = () => window.open(gitHubUrl, '_blank');
+  const handleLinkedInIcon = () => window.open(linkedInUrl, '_blank');
+  const handleInstagramIcon = () => window.open(instagramUrl, '_blank');
+  const handleTwitterIcon = () => window.open(twitterUrl, '_blank');
+
   return (
-    <Section>
+    <Section id='hero'>
       <Navbar></Navbar>
       <Container>
         <Left>
@@ -131,9 +179,47 @@ const Hero = () => {
           <Subtitle>
             Building Seamless Web Experiences from Front to Back
           </Subtitle>
-          <Button>Learn More</Button>
+          <ButtonContainer>
+            <Button>Learn More</Button>
+            <Anchor href={CV} download=''>
+              Download CV
+            </Anchor>
+          </ButtonContainer>
+          <IconContainer>
+            <Icon src={GitHubLogo} onClick={handleGitHubIcon}></Icon>
+            <Icon
+              src={LinkedInLogo}
+              onClick={handleLinkedInIcon}
+              className='tooltip'
+            ></Icon>
+            <Icon
+              src={InstagramLogo}
+              onClick={handleInstagramIcon}
+              className='tooltip'
+            ></Icon>
+            <Icon
+              src={TwitterLogo}
+              onClick={handleTwitterIcon}
+              className='tooltip'
+            ></Icon>
+          </IconContainer>
         </Left>
         <Right>
+          <Canvas>
+            <Suspense fallback={null}>
+              <OrbitControls enableZoom={false} />
+              <ambientLight intensity={1} />
+              <directionalLight position={[3, 2, 1]} />
+              <Sphere args={[1, 100, 200]} scale={2.4}>
+                <MeshDistortMaterial
+                  color='#3d1c56'
+                  attach='material'
+                  distort={0.5}
+                  speed={2}
+                />
+              </Sphere>
+            </Suspense>
+          </Canvas>
           <Img src='./public/img/profile.jpg'></Img>
         </Right>
       </Container>

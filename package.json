@@ -11,12 +11,16 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@react-three/drei": "9.56.28",
-    "@react-three/fiber": "8.11.5",
+    "@react-three/drei": "^9.83.9",
+    "@react-three/fiber": "^8.14.1",
+    "@react-three/postprocessing": "^2.15.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-scroll": "^1.8.9",
     "react-simple-maps": "^3.0.0",
     "styled-components": "5.3.6",
+    "react-tsparticles": "1.39.0",
+    "tsparticles-path-polygon": "1.39.0",
     "three": "^0.156.1"
   },
   "devDependencies": {
