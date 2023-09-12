@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Link } from 'react-scroll';
 import Cube from './Cube';
+import LineImage from '../img/line.png';
 
 const Section = styled.div`
   height: 100vh;
@@ -112,7 +113,7 @@ const About = () => {
         </Left>
         <Right>
           <Title>Full Stack Developer</Title>
-          <Line src='./public/img/line.png'></Line>
+          <Line src={LineImage}></Line>
           {/* <Role>Full Stack Developer</Role> */}
           <Subtitle>
             Developing comprehensive applications with the MERN Stack: React,

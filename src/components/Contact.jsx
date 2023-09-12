@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
+import Moon from '../img/moon.png';
 
 const Section = styled.div`
   height: 100vh;
@@ -152,7 +153,7 @@ const Contact = () => {
               </Sphere>
             </Suspense>
           </Canvas>
-          <Img src='./img/moon.png' />
+          <Img src={Moon} />
         </Right>
       </Container>
     </Section>

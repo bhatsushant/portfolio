@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import PhoneIcon from '../img/phone-icon.png';
 
 const Section = styled.div`
   display: flex;
@@ -138,7 +139,7 @@ const Navbar = () => {
         <Icons>
           {/* Changed the image due to copyright problems */}
           <Button>
-            <Icon src='./img/phone-icon.png' />
+            <Icon src={PhoneIcon} />
             <Link
               spy={true}
               smooth={true}

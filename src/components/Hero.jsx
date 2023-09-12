@@ -4,11 +4,13 @@ import Navbar from './Navbar';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { Link } from 'react-scroll';
-import GitHubLogo from '../../public/img/github-icon.svg';
-import LinkedInLogo from '../../public/img/linkedin-icon.svg';
-import InstagramLogo from '../../public/img/instagram-icon.svg';
-import TwitterLogo from '../../public/img/twitter-icon.svg';
+import GitHubLogo from '../img/github-icon.svg';
+import LinkedInLogo from '../img/linkedin-icon.svg';
+import InstagramLogo from '../img/instagram-icon.svg';
+import TwitterLogo from '../img/twitter-icon.svg';
 import CV from '../../public/assets/sushant-bhat-resume.pdf';
+import Profile from '../img/profile.jpg';
+import LineImage from '../img/line.png';
 
 const Section = styled.div`
   height: 100vh;
@@ -175,7 +177,7 @@ const Hero = () => {
       <Container>
         <Left>
           <Title>Sushant Bhat</Title>
-          <Line src='./public/img/line.png'></Line>
+          <Line src={LineImage}></Line>
           <Role>Full Stack Developer</Role>
           <Subtitle>
             Building Seamless Web Experiences from Front to Back
@@ -231,7 +233,7 @@ const Hero = () => {
               </Sphere>
             </Suspense>
           </Canvas>
-          <Img src='./public/img/profile.jpg'></Img>
+          <Img src={Profile}></Img>
         </Right>
       </Container>
     </Section>
