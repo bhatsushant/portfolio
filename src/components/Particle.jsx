@@ -10,9 +10,7 @@ export default function Particle() {
           enable: true,
           zIndex: -1,
         },
-        style: {
-          position: 'absolute',
-        },
+
         detectRetina: true,
         fpsLimit: 60,
         interactivity: {
