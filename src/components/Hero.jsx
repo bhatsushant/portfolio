@@ -8,7 +8,7 @@ import GitHubLogo from '../img/github-icon.svg';
 import LinkedInLogo from '../img/linkedin-icon.svg';
 import InstagramLogo from '../img/instagram-icon.svg';
 import TwitterLogo from '../img/twitter-icon.svg';
-import CV from '../../public/assets/sushant-bhat-resume.pdf';
+import CV from '../assets/sushant-bhat-resume.pdf';
 import Profile from '../img/profile.jpg';
 import LineImage from '../img/line.png';
 
@@ -173,7 +173,6 @@ const Hero = () => {
 
   return (
     <Section id='hero'>
-      <Navbar></Navbar>
       <Container>
         <Left>
           <Title>Sushant Bhat</Title>

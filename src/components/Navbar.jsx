@@ -6,14 +6,28 @@ import PhoneIcon from '../img/phone-icon.png';
 const Section = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
+  height: fit-content;
+  background-color: black;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 15px;
+    display: none;
   }
 `;
 
 const Container = styled.div`
-  width: 1400px;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -22,10 +36,14 @@ const Container = styled.div`
   @media only screen and (max-width: 768px) {
     width: 90%; /* Adjust the width for smaller screens */
     padding: 10px;
+    flex-direction: column;
   }
 `;
 
 const Links = styled.div`
+  position: relative;
+  width: fit-content;
+  height: 100%;
   display: flex;
   align-items: center;
   gap: 50px;
@@ -41,17 +59,11 @@ const List = styled.ul`
   list-style: none;
 
   @media only screen and (max-width: 768px) {
-    flex-direction: column; /* Stack the links vertically on smaller screens */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #fff; /* Background color for mobile menu */
+    /* flex-direction: column; */
+    width: 100vw;
     justify-content: center;
     align-items: center;
-    z-index: 1; /* Ensure the menu is above other content */
-    opacity: 0; /* Initially hidden */
+    z-index: 99; /* Ensure the menu is above other content */
     pointer-events: none; /* Initially not clickable */
     transition: opacity 0.3s ease-in-out;
   }
@@ -70,12 +82,6 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-
-  @media only screen and (max-width: 768px) {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
 `;
 
 const Icon = styled.img`
@@ -101,45 +107,28 @@ const Button = styled.button`
 const Navbar = () => {
   return (
     <Section>
-      <Container>
-        <Links>
-          {/* <Logo src=""></Logo> */}
-          <List>
-            <ListItem>
-              <Link
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to='hero'
-              >
-                Home
-              </Link>
-            </ListItem>
-            <Link
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-              to='about'
-            >
-              <ListItem>About</ListItem>
-            </Link>
+      <Links>
+        {/* <Logo src=""></Logo> */}
+        <List>
+          <ListItem>
             <Link
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
-              to='work'
+              to='hero'
             >
-              <ListItem>Work</ListItem>
+              Home
             </Link>
-          </List>
-        </Links>
-        <Icons>
-          {/* Changed the image due to copyright problems */}
+          </ListItem>
+          <Link spy={true} smooth={true} offset={50} duration={500} to='about'>
+            <ListItem>About</ListItem>
+          </Link>
+          <Link spy={true} smooth={true} offset={-70} duration={500} to='work'>
+            <ListItem>Work</ListItem>
+          </Link>
           <Button>
-            <Icon src={PhoneIcon} />
+            {/* <Icon src={PhoneIcon} /> */}
             <Link
               spy={true}
               smooth={true}
@@ -147,11 +136,13 @@ const Navbar = () => {
               duration={500}
               to='contact'
             >
-              Contact
+              <ListItem>Contact</ListItem>
             </Link>
           </Button>
-        </Icons>
-      </Container>
+        </List>
+      </Links>
+      {/* <Container>
+      </Container> */}
     </Section>
   );
 };
