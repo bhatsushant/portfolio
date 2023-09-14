@@ -8,8 +8,13 @@ import Contact from './components/Contact';
 import Particle from './components/Particle';
 
 const Container = styled.div`
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
+  /* overflow: hidden; */
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -22,12 +27,14 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <Particle></Particle>
-      <Navbar></Navbar>
-      <Hero></Hero>
-      <About></About>
-      <Work></Work>
-      <Contact></Contact>
+      <div style={{ position: 'relative', width: '100%' }}>
+        <Particle></Particle>
+        <Navbar></Navbar>
+        <Hero></Hero>
+        <About></About>
+        <Work></Work>
+        <Contact></Contact>
+      </div>
     </Container>
   );
 }

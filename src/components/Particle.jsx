@@ -1,147 +1,158 @@
 import React from 'react';
 import Particles from 'react-tsparticles';
-// import './styles.css';
 
 export default function Particle() {
   return (
     <Particles
       options={{
+        autoPlay: true,
         fullScreen: {
           enable: true,
           zIndex: -1,
         },
         style: {
-          width: '100vw',
+          position: 'absolute',
         },
-        particles: {
-          number: {
-            value: 10,
-            limit: 300,
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-          },
-          color: {
-            value: '#ffffff',
-          },
-          shape: {
-            type: 'circle',
-            stroke: {
-              width: 0,
-              color: '#000000',
-            },
-            polygon: {
-              nb_sides: 5,
-            },
-            image: {
-              src: 'images/github.svg',
-              width: 100,
-              height: 100,
-            },
-          },
-          opacity: {
-            value: 0.5,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.5,
-              sync: false,
-            },
-          },
-          size: {
-            value: 30,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 10,
-              size_min: 10,
-              sync: false,
-            },
-          },
-          line_linked: {
-            enable: true,
-            distance: 100,
-            color: '#ffffff',
-            opacity: 1,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 3,
-            direction: 'none',
-            random: false,
-            straight: false,
-            out_mode: 'out',
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200,
-            },
-          },
-        },
+        detectRetina: true,
+        fpsLimit: 60,
         interactivity: {
-          detect_on: 'canvas',
           events: {
+            onClick: {
+              enable: false,
+              mode: 'push',
+            },
+            onDiv: {
+              elementId: 'repulse-div',
+              enable: true,
+              mode: 'connect',
+            },
             onHover: {
               enable: true,
-              mode: 'bubble',
+              mode: ['repulse', 'bubble'],
               parallax: {
-                enable: false,
+                enable: true,
                 force: 60,
                 smooth: 10,
               },
             },
-            onClick: {
-              enable: true,
-              mode: 'push',
-            },
             resize: true,
           },
           modes: {
+            bubble: {
+              distance: 400,
+              duration: 2,
+              opacity: 0.8,
+              size: 10,
+              speed: 3,
+            },
+            connect: {
+              distance: 80,
+              lineLinked: {
+                opacity: 0.5,
+              },
+              radius: 60,
+            },
             grab: {
               distance: 400,
               lineLinked: {
                 opacity: 1,
               },
             },
-            bubble: {
-              distance: 400,
-              size: 100,
-              duration: 2,
-              opacity: 1,
-              speed: 2,
-            },
-            repulse: {
-              distance: 200,
-            },
             push: {
-              particles_nb: 4,
+              quantity: 4,
             },
             remove: {
-              particles_nb: 2,
+              quantity: 2,
+            },
+            repulse: {
+              distance: 100,
+              duration: 100,
             },
           },
+          detectsOn: 'window',
         },
-        backgroundMask: {
-          enable: true,
-          cover: {
-            color: {
-              value: {
-                r: 0,
-                g: 0,
-                b: 0,
+        particles: {
+          color: {
+            value: '#DCD7C9',
+          },
+          lineLinked: {
+            blink: false,
+            color: '#DCD7C9',
+            consent: false,
+            distance: 300,
+            enable: true,
+            opacity: 0.5,
+            width: 1,
+          },
+          move: {
+            attract: {
+              enable: false,
+              rotate: {
+                x: 600,
+                y: 1200,
               },
             },
+            bounce: true,
+            direction: 'none',
+            enable: true,
+            outMode: 'out',
+            random: true,
+            speed: 2,
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+              area: 650,
+            },
+            limit: 500,
+            value: 20,
+          },
+          opacity: {
+            animation: {
+              enable: false,
+              minimumValue: 0.1,
+              speed: 1,
+              sync: false,
+            },
+            random: false,
+            value: 0.5,
+          },
+          shape: {
+            type: 'circle',
+          },
+          size: {
+            animation: {
+              enable: false,
+              minimumValue: 0.1,
+              speed: 40,
+              sync: false,
+            },
+            random: true,
+            value: 5,
           },
         },
-        retina_detect: true,
-        fps_limit: 60,
-        // background: {
-        //   image: "url('https://particles.js.org/images/background3.jpg')",
-        // },
+        polygon: {
+          draw: {
+            enable: false,
+            lineColor: '#ffffff',
+            lineWidth: 0.5,
+          },
+          move: {
+            radius: 10,
+          },
+          scale: 1,
+          type: 'none',
+          url: '',
+        },
+        background: {
+          color: '#000',
+          opacity: '1',
+          image: '',
+          position: '50% 50%',
+          repeat: 'no-repeat',
+          size: 'cover',
+        },
       }}
     />
   );
