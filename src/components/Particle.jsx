@@ -10,6 +10,9 @@ export default function Particle() {
           enable: true,
           zIndex: -1,
         },
+        style: {
+          width: '100vw',
+        },
         particles: {
           number: {
             value: 10,
@@ -136,9 +139,9 @@ export default function Particle() {
         },
         retina_detect: true,
         fps_limit: 60,
-        background: {
-          image: "url('https://particles.js.org/images/background3.jpg')",
-        },
+        // background: {
+        //   image: "url('https://particles.js.org/images/background3.jpg')",
+        // },
       }}
     />
   );

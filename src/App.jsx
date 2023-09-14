@@ -8,14 +8,12 @@ import Contact from './components/Contact';
 import Particle from './components/Particle';
 
 const Container = styled.div`
+  width: 100vw;
   height: 100vh;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  /* overflow-y: auto; */
   scrollbar-width: none;
   color: white;
-  /* background-color: #171717; */
-  /* background: url('./public/img/bg.jpeg'); */
   &::-webkit-scrollbar {
     display: none;
   }

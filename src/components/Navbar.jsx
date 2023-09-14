@@ -14,6 +14,7 @@ const Section = styled.div`
   top: 0;
   left: 0;
   z-index: 99;
+  padding-top: 15px;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -24,34 +25,6 @@ const Section = styled.div`
     display: none;
   }
 `;
-
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px 0px;
-
-  @media only screen and (max-width: 768px) {
-    width: 90%; /* Adjust the width for smaller screens */
-    padding: 10px;
-    flex-direction: column;
-  }
-`;
-
-const Links = styled.div`
-  position: relative;
-  width: fit-content;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 50px;
-`;
-
-// const Logo = styled.img`
-//   height: 50px;
-// `;
 
 const List = styled.ul`
   display: flex;
@@ -78,12 +51,6 @@ const ListItem = styled.li`
   }
 `;
 
-const Icons = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
-`;
-
 const Icon = styled.img`
   width: 20px;
   height: 20px;
@@ -107,42 +74,23 @@ const Button = styled.button`
 const Navbar = () => {
   return (
     <Section>
-      <Links>
-        {/* <Logo src=""></Logo> */}
-        <List>
-          <ListItem>
-            <Link
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              to='hero'
-            >
-              Home
-            </Link>
-          </ListItem>
-          <Link spy={true} smooth={true} offset={50} duration={500} to='about'>
-            <ListItem>About</ListItem>
+      <List>
+        <ListItem>
+          <Link spy={true} smooth={true} offset={-70} duration={500} to='hero'>
+            Home
           </Link>
-          <Link spy={true} smooth={true} offset={-70} duration={500} to='work'>
-            <ListItem>Work</ListItem>
-          </Link>
-          <Button>
-            {/* <Icon src={PhoneIcon} /> */}
-            <Link
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-              to='contact'
-            >
-              <ListItem>Contact</ListItem>
-            </Link>
-          </Button>
-        </List>
-      </Links>
-      {/* <Container>
-      </Container> */}
+        </ListItem>
+        <Link spy={true} smooth={true} offset={50} duration={500} to='about'>
+          <ListItem>About</ListItem>
+        </Link>
+        <Link spy={true} smooth={true} offset={-70} duration={500} to='work'>
+          <ListItem>Work</ListItem>
+        </Link>
+        <Link spy={true} smooth={true} offset={50} duration={500} to='contact'>
+          <ListItem>Contact</ListItem>
+        </Link>
+        <Button>{/* <Icon src={PhoneIcon} /> */}</Button>
+      </List>
     </Section>
   );
 };
