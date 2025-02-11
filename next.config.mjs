@@ -5,6 +5,7 @@ const moduleExports = {
   reactStrictMode: true,
   swcMinify: true,
   output: "export",
+  trailingSlash: true,
   webpack: config => {
     /* ... */
   },
