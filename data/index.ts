@@ -99,29 +99,29 @@ export const projects = [
 export const workExperience = [
   {
     id: 1,
-    title: "Associate Software Engineer - CRISIL Ltd.",
-    desc: "Developed an in-house product akin to Oracle Business Intelligence, employing Angular, Java, jQuery, and SQL to craft interactive dashboards enabling wholesale banking customers to extract crucial insights for informed decision-making",
+    title: "Full Stack Developer - Humana",
+    desc: "Constructed a streamlined case prep API using Node.js, Express.js, PostgreSQL, and Redis to combine eligibility, provider, and policy feeds and cut cross system hops by about 45 percent",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg"
   },
   {
     id: 2,
-    title: "Software Engineer - DXC Technology",
-    desc: "•	Developed a Financial Management application, utilizing React, Express, Tailwind CSS, and MySQL, resulting in improved system efficiency and a 20% reduction in processing times across all financial transactions",
+    title: "Frontend Developer - Cardinal Health",
+    desc: "Owned medication-replenishment dashboards using React, TypeScript, Tailwind CSS, and shadcn-ui, giving pharmacists cleaner visibility into stock trends and improving daily task completion time by ~28%",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg"
   },
   {
     id: 3,
-    title: "Software Engineer - breathing.ai",
-    desc: "•	Led a cross-functional team of 4 developers to build a digital health application aimed at providing relaxing screen time to users.",
+    title: "Full Stack Developer - SageSofttech",
+    desc: "Directed a campaign designer UI using React, TypeScript, Tailwind CSS, and custom drag modules that let merchandisers schedule discounts and flash deals, cutting manual spreadsheet work by nearly 50 percent",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg"
   },
   {
     id: 4,
-    title: "Software Engineer - Streamline Healthcare Solutions",
-    desc: "•	Directed the development of a Patient Management System using React, TypeScript, and ExpressJS, focusing on patient forms and appointment scheduling, significantly improving patient satisfaction scores across the board.",
+    title: "Software Engineer - Crisil Ltd.",
+    desc: "Architected an event routing module using Node.js, Express.js, and MongoDB, processing incoming tasks from multiple systems and reducing message drop rates by about 40 percent",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg"
   }
